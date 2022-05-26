@@ -64,7 +64,7 @@ func main() {
     var board[5][5]int
     for row := 0; row < 5; row++ {
       scanner.Scan()
-      for col, num := range regexp.MustCompile(`\s+`).Split(scanner.Text(), 5) {
+      for col, num := range regexp.MustCompile(`\s+`).Split(strings.TrimSpace(scanner.Text()), 5) {
         board[row][col], _ = strconv.Atoi(num)
       }
     }
